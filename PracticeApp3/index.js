@@ -6,7 +6,10 @@ app.get('/',function (req,res) {
     res.send("This is home page")
 })
 
-
+app.use('/about',function (req,res,next) {
+    console.log("I am about middleware")
+    next()
+})
 app.get('/contact',function (req,res) {
     res.send("This is contact page")
 })
